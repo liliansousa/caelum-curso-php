@@ -1,18 +1,14 @@
 <?php 
-  $pageTitle="Loja: Cadastro de produto"; 
-  include 'header.php';
-  $nome = $_GET["nome"];
-  $preco = $_GET["preco"];
+  $nome = $_POST["nome"];
+  $preco = $_POST["preco"];
+  $descricao = $_POST["descricao"];  
+  $categoria_id = $_POST["categoria_id"];
 
-  $conexao = mysqli_connect('localhost','root','caelum','loja');
+  require_once ('header.php');
+  require_once ('conecta.php');
+  require_once ('banco-produto.php') ;
 
-  function insereProduto($conexao, $nome, $preco){
-    $query = "INSERT INTO produtos(nome, preco) values ('{$nome}',{$preco})";
-    $resultado = mysqli_query($conexao, $query);
-    return $resultado;
-  }
-
-  if(insereProduto($conexao, $nome, $preco)){?>
+  if(insereProduto($conexao, $nome, $preco, $descricao, $categoria_id)){?>
     <p>Produto <?=$nome ?> inserido com sucesso! </p>
   <?php
   }else { ?>
@@ -22,4 +18,4 @@
   mysqli_close($conexao);
 ?>
 
-<?php include 'footer.php' ?>
+<?php require_once ('footer.php'); ?>
