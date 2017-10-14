@@ -3,8 +3,11 @@
   require_once 'header.php';
   require_once ('conecta.php');
   require_once ('banco-categoria.php');
+  require_once 'verifica-sessao.php';
 
   $categorias = listaCategorias($conexao);
+
+  validaSessao();
 ?>
 <div class="row">
     <div class="col-md-8">

@@ -1,3 +1,6 @@
+<?php
+require_once 'verifica-sessao.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +23,16 @@
             <li><a href="produto-formulario.php">Cadastro de produto</a></li>
             <li><a href="produtos.php">Lista de produtos</a></li>
             <li><a href="categorias.php">Cadastro de Categorias</a></li>
+            <li>
+              <?php
+                if(usuarioEstaLogado()){?>
+                <form action="logout.php" method="post">
+                  <button type="submit" class="btn btn-default">Sair</button>
+                </form>
+              <?php
+              }
+              ?>
+            </li>
           </ul>
         </div>
       </div><!-- /.container-fluid -->

@@ -11,3 +11,24 @@ CREATE TABLE produtos(
 )
 
 alter table produtos add column descricao varchar(255);
+
+CREATE TABLE categorias(
+   ...
+)
+
+---
+//aula 3 - Autenticação
+//6.2 Exercícios: Ação de login
+use LOJA
+
+CREATE TABLE usuarios(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR( 255 ),
+    senha VARCHAR( 255 )
+)
+
+insert into usuarios (login,senha) values ('admin ','admin'));
+
+UPDATE usuarios
+SET senha=md5('admin')
+WHERE login = 'admin'
