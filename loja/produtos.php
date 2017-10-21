@@ -29,15 +29,15 @@
                    
                 </thead>
                 <tbody>
+                
                 <?php foreach($produtos as $produto): ?>
                     <tr>
-                        <td><?= $produto['id'] ?></td>
-                        <td><?= $produto['nome'] ?></td>
-                        <td><?= $produto['preco'] ?></td>
-                        <td><?= substr($produto['descricao'],0, 40) ?></td>
-                        <td><?= $produto['categoria_nome'] ?></td>
-                        
-                        <td><a class="btn btn-default" href="remove-produto.php?id=<?=$produto['id'] ?>">Excluir</a></td>
+                        <td><?= $produto->getId(); ?></td>
+                        <td><?= $produto->getNome(); ?></td>
+                        <td><?= $produto->getPreco(); ?></td>
+                        <td><?= substr($produto->getDescricao(),0, 40) ?></td>
+                        <td></td>
+                        <td><a class="btn btn-default" href="remove-produto.php?id=<?=$produto->getId(); ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach ?>
                 </tbody>

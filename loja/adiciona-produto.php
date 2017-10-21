@@ -8,14 +8,14 @@
 
   $produto = new Produto();
 
-  $produto->nome = $_POST["nome"];
-  $produto->preco = $_POST["preco"];
-  $produto->descricao= $_POST["descricao"];
-  $produto->categoria_id= $_POST["categoria_id"];
+  $produto->setNome($_POST["nome"]);
+  $produto->setPreco($_POST["preco"]);
+  $produto->setDescricao($_POST["descricao"]);
+  $produto->setCategoriaID($_POST["categoria_id"]);
   
 
   if(insereProduto($conexao, $produto)){?>
-    <p>Produto <?=$produto->nome ?> inserido com sucesso! </p>
+    <p>Produto <?=$produto->getNome(); ?> inserido com sucesso! </p>
   <?php
   }else { ?>
     <p>Falha ao inserir o produto</p>

@@ -1,12 +1,9 @@
 <?php 
   $pageTitle="Loja: Cadastro de produto"; 
   require_once 'header.php';
-  require_once ('conecta.php');
-  require_once ('banco-categoria.php');
+  require_once 'conecta.php';
+  require_once 'banco-categoria.php';
   require_once 'verifica-sessao.php';
-
-  $categorias = listaCategorias($conexao);
-
   validaSessao();
 ?>
 <div class="row">
@@ -24,8 +21,11 @@
             <div class="form-group">
                 <label for="categoriaProd">Categoria:</label>
                 <select name="categoria_id" id="categoriaProd" class="form-control">
-                <?php foreach($categorias as $categoria) : ?>
-                    <option value="<?= $categoria['id'] ?>"><?= $categoria['nome'] ?></option>
+                <?php 
+                $categorias = listaCategorias($conexao);
+                foreach($categorias as $categoria) : 
+                ?>
+                    <option value="<?= $categoria->getId() ?>"><?= $categoria->getNome() ?></option>
                 <?php endforeach ?>
                 </select>
             </div>
