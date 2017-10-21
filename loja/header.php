@@ -21,7 +21,7 @@ require_once 'verifica-sessao.php';
         <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav">
             <li><a href="produto-formulario.php">Cadastro de produto</a></li>
-            <li><a href="produtos.php">Lista de produtos</a></li>
+            <li><a href="produto-lista.php">Lista de produtos</a></li>
             <li><a href="categorias.php">Cadastro de Categorias</a></li>
             <li>
               <?php
