@@ -26,7 +26,6 @@
                         <td><strong>Descrição</strong></td>
                         <td><strong>categoria</strong></td>
                     </tr>
-                   
                 </thead>
                 <tbody>
                 
@@ -38,6 +37,12 @@
                         <td><?= substr($produto->getDescricao(),0, 40) ?></td>
                         <td></td>
                         <td><a class="btn btn-default" href="remove-produto.php?id=<?=$produto->getId(); ?>">Excluir</a></td>
+                        <td>
+                            <form method="post" action="produto-formulario.php">
+                                <input type="hidden" name="id" value="<?=$produto->getId()?>">
+                                <button class="btn btn-default" type="submit">Alterar</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach ?>
                 </tbody>

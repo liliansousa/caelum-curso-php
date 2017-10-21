@@ -4,7 +4,16 @@
   require_once 'conecta.php';
   require_once 'banco-categoria.php';
   require_once 'verifica-sessao.php';
+  require_once 'altera-produto.php';
   validaSessao();
+
+  $produto = new Produto();
+  $action = "adiciona-produto.php";
+
+  if(array_key_exists('id', $_POST)){
+      $produto = getProductId($canvas, $_POST['id']);
+      $action = "altera-produto.php";
+  }
 ?>
 <div class="row">
     <div class="col-md-8">
