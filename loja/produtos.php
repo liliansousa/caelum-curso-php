@@ -29,11 +29,12 @@
                    
                 </thead>
                 <tbody>
+                
                 <?php foreach($produtos as $produto): ?>
                     <tr>
                         <td><?= $produto->getId(); ?></td>
                         <td><?= $produto->getNome(); ?></td>
-                        <td><?= $produto->getpreco(); ?></td>
+                        <td><?= $produto->getPreco(); ?></td>
                         <td><?= substr($produto->getDescricao(),0, 40) ?></td>
                         <td></td>
                         <td><a class="btn btn-default" href="remove-produto.php?id=<?=$produto->getId(); ?>">Excluir</a></td>

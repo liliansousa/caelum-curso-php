@@ -20,16 +20,11 @@
         
         while($array = mysqli_fetch_assoc($resultado)){
             $produto = new Produto();
-            //$produto->id= $array['id'];
-            $produto->getId();
-            //$produto->nome= $array['nome'];
-            $produto->getNome();
-            //$produto->preco= $array['preco'];
-            $produto->getPreco();
-            //$produto->descricao= $array['descricao'];
-            $produto->getDescricao();
-            //$produto->categoria_id = $array['categoria_id'];
-            $produto->getCategoriaId();
+            $produto->setId($array['id']);
+            $produto->setNome($array['nome']);
+            $produto->setPreco($array['preco']);
+            $produto->setDescricao($array['descricao']);
+            $produto->setCategoriaId($array['categoria_id']);
 
             //relacionando com categoria
 

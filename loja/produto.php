@@ -28,12 +28,12 @@ class Produto{
     public function getDescricao(){
         return $this->descricao;
     }
-    public function getCategoriaID(){
+    public function getCategoriaId(){
         return $this->categoria_id;
     }
 
     //setter
-    public function setID($id){
+    public function setId($id){
         return $this->id = $id;
     }
     public function setNome($nome){
@@ -45,7 +45,7 @@ class Produto{
     public function setDescricao($descricao){
         return $this->descricao = $descricao;
     }
-    public function setCategoriaID($categoria_id){
+    public function setCategoriaId($categoria_id){
         return $this->categoria_id = $categoria_id;
     }
 }
