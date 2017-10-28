@@ -13,7 +13,7 @@
         }
 
         //setter
-        public function setID($id){
+        public function setId($id){
             return $this->id = $id;
         }
         public function setNome($nome){

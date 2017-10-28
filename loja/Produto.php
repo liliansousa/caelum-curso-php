@@ -15,6 +15,27 @@ class Produto{
 
     }
 
+    function __construct($nome = "Produto Vazio",  $preco){
+        $this->nome = $nome;
+        $this->preco = $preco;
+    }
+
+    function __toString(){
+        return "Nome: ".$this->getNome().", Preço: ".$this.getPreco();
+    }
+
+    function __destruct(){
+        echo "Destruido o produto ".$this->getNome();
+    }
+
+    function temIsbn(){
+        return $this instanceof Livro;
+    }
+
+    function calculaImposto(){
+
+    }
+
     //getter
     public function getId(){
         return $this->id;

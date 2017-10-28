@@ -1,13 +1,12 @@
 <?php
-    require_once ('produto.php') ;
-    require_once ('categoria.php') ;
+    require_once ('autoload.php') ;
 
     function insereProduto($conexao, $produto){
         $query = "INSERT INTO produtos(nome, preco, descricao, categoria_id) values (
-            '{$produto->setNome( $produto['nome'] )}',
-            {$produto->setPreco( $preco['preco'] )},
-            '{$produto->setDescricao( $preco['descricao'] )}',
-            {$produto->setCategoriaID( $categoria_id['categoria_id'] )}
+            '{$produto->getNome()}',
+            {$produto->getPreco()},
+            '{$produto->getDescricao()}',
+            {$produto->getCategoriaId()}
         )";
         $resultado = mysqli_query($conexao, $query);
         return $resultado;

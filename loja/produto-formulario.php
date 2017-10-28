@@ -3,15 +3,19 @@
   require_once 'header.php';
   require_once 'conecta.php';
   require_once 'banco-categoria.php';
+  //require_once 'banco-produto.php';
   require_once 'verifica-sessao.php';
   require_once 'altera-produto.php';
+  require_once ('autoload.php') ;
   validaSessao();
 
-  $produto = new Produto();
+  $produto = new Produto($nome, $preco);
+  $daoProd = new ProdutoDAO($conexao);
+
   $action = "adiciona-produto.php";
 
   if(array_key_exists('id', $_POST)){
-      $produto = getProductId($canvas, $_POST['id']);
+      $produto = getId($canvas, $_POST['id']);
       $action = "altera-produto.php";
   }
 ?>
@@ -19,6 +23,23 @@
     <div class="col-md-8">
         <h3>Formulário de cadadastro</h3><br>
         <form action="adiciona-produto.php" method="post">
+            <div class="form-group">
+                <label for="tipoProduto">Tipo de produto:</label>
+                <select name="tipoProduto" class="form-control">
+                    <option value="geral">geral</option>
+                    <option value="livro">livro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>ISBN (quando for livro)</label>
+                <?php 
+                    $isbn=""; 
+                    if ($produto->temIsbn()){
+                        $isbn=$produto->getIsbn();
+                    } 
+                ?>
+                <input class="form-control" name ="isbn" value="<?=$isbn ?>"/>
+            </div>
             <div class="form-group">
                 <label for="nomeProd">Nome:</label>
                 <input type="text" class="form-control" id="nomeProd" name="nome" placeholder="Nome do produto">
@@ -48,4 +69,4 @@
         </form>
     </div>
 </div>
-<?php include 'footer.php' ?>
+<?php require_once 'footer.php' ?>

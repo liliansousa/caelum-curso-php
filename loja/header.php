@@ -6,7 +6,7 @@ require_once 'verifica-sessao.php';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title><?=$pageTitle ?></title>
+    <title></title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/loja.css">
   </head>
@@ -23,6 +23,7 @@ require_once 'verifica-sessao.php';
             <li><a href="produto-formulario.php">Cadastro de produto</a></li>
             <li><a href="produto-lista.php">Lista de produtos</a></li>
             <li><a href="categorias.php">Cadastro de Categorias</a></li>
+            <li><a href="contato.php">Contato</a></li>
             <li>
               <?php
                 if(usuarioEstaLogado()){?>

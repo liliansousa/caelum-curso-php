@@ -1,5 +1,5 @@
 <?php
-    require_once 'categoria.php';
+    require_once ('autoload.php') ;
 
     function listaCategorias($conexao){
         $categorias = array();

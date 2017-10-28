@@ -32,3 +32,21 @@ insert into usuarios (login,senha) values ('admin ','admin'));
 UPDATE usuarios
 SET senha=md5('admin')
 WHERE login = 'admin'
+
+
+----
+
+
+mysql> desc produtos
++--------------+---------------+------+-----+---------+----------------+
+| Field        | Type          | Null | Key | Default | Extra          |
++--------------+---------------+------+-----+---------+----------------+
+| id           | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome         | varchar(255)  | YES  |     | NULL    |                |
+| preco        | decimal(10,2) | YES  |     | NULL    |                |
+| descricao    | varchar(255)  | YES  |     | NULL    |                |
+| categoria_id | int(11)       | YES  |     | NULL    |                |
+| usado        | tinyint(1)    | YES  |     | 0       |                |
+| isbn         | varchar(255)  | YES  |     | NULL    |                |
++--------------+---------------+------+-----+---------+----------------+
+7 rows in set (0,00 sec)
